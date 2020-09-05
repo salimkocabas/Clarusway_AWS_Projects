@@ -62,7 +62,7 @@ Resources:
       LaunchTemplateData:
         ImageId: ami-02354e95b39ca8dec
         InstanceType: t2.micro
-        KeyName: call.training
+        KeyName: Virginia_DB_KeyPair
         SecurityGroupIds:
           - !GetAtt WebServersSecGroup.GroupId
         TagSpecifications:
@@ -75,7 +75,7 @@ Resources:
               #! /bin/bash
               yum update -y
               yum install httpd -y
-              FOLDER="https://github.com/salimkocabas/Clarusway_AWS_Projects/tree/master/102-kittens-carusel-withLB/static-web/"
+              FOLDER="https://raw.githubusercontent.com/salimkocabas/Clarusway_AWS_Projects/master/102-kittens-carusel-withLB/static-web/"
               curl -s --create-dirs -o "/var/www/html/index.html" -L "$FOLDER"index.html
               curl -s --create-dirs -o "/var/www/html/cat0.jpg" -L "$FOLDER"cat0.jpg
               curl -s --create-dirs -o "/var/www/html/cat1.jpg" -L "$FOLDER"cat1.jpg
